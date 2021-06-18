@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WcfService" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ApplicationService.DTOs" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Data.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSongs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSongs" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSongs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSongsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSongById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSongById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSongById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSongByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostSong_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostSong" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostSong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostSongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PutSong_InputMessage">
+    <wsdl:part name="parameters" element="tns:PutSong" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PutSong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutSongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteSong_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSong" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteSong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUsersById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUsersById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PutUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:PutUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PutUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRatings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRatings" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRatings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRatingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRatingsById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRatingsById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRatingsById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRatingsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostRating_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostRating" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostRating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PutRating_InputMessage">
+    <wsdl:part name="parameters" element="tns:PutRating" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PutRating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteRating_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRating" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteRating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRatingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSongs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSongs" message="tns:IService1_GetSongs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetSongsResponse" message="tns:IService1_GetSongs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSongById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSongById" message="tns:IService1_GetSongById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetSongByIdResponse" message="tns:IService1_GetSongById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostSong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PostSong" message="tns:IService1_PostSong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostSongResponse" message="tns:IService1_PostSong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutSong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PutSong" message="tns:IService1_PutSong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PutSongResponse" message="tns:IService1_PutSong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteSong" message="tns:IService1_DeleteSong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteSongResponse" message="tns:IService1_DeleteSong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUsers" message="tns:IService1_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUsersResponse" message="tns:IService1_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUsersById" message="tns:IService1_GetUsersById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUsersByIdResponse" message="tns:IService1_GetUsersById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PostUser" message="tns:IService1_PostUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostUserResponse" message="tns:IService1_PostUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PutUser" message="tns:IService1_PutUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PutUserResponse" message="tns:IService1_PutUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteUser" message="tns:IService1_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteUserResponse" message="tns:IService1_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRatings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetRatings" message="tns:IService1_GetRatings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetRatingsResponse" message="tns:IService1_GetRatings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRatingsById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetRatingsById" message="tns:IService1_GetRatingsById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetRatingsByIdResponse" message="tns:IService1_GetRatingsById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PostRating" message="tns:IService1_PostRating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostRatingResponse" message="tns:IService1_PostRating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutRating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PutRating" message="tns:IService1_PutRating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PutRatingResponse" message="tns:IService1_PutRating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteRating" message="tns:IService1_DeleteRating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteRatingResponse" message="tns:IService1_DeleteRating_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSongs">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetSongs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSongById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetSongById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSong">
+      <soap:operation soapAction="http://tempuri.org/IService1/PostSong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PutSong">
+      <soap:operation soapAction="http://tempuri.org/IService1/PutSong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSong">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteSong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUsersById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/PostUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PutUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/PutUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRatings">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetRatings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRatingsById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetRatingsById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRating">
+      <soap:operation soapAction="http://tempuri.org/IService1/PostRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PutRating">
+      <soap:operation soapAction="http://tempuri.org/IService1/PutRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRating">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfService/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

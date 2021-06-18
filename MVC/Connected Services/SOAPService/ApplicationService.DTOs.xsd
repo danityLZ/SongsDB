@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ApplicationService.DTOs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ApplicationService.DTOs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Data.Entities" />
+  <xs:complexType name="ArrayOfSongDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SongDTO" nillable="true" type="tns:SongDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSongDTO" nillable="true" type="tns:ArrayOfSongDTO" />
+  <xs:complexType name="SongDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Lenght" type="xs:float" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Data.Entities" minOccurs="0" name="Ratings" nillable="true" type="q1:ArrayOfRating" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearReleased" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SongDTO" nillable="true" type="tns:SongDTO" />
+  <xs:complexType name="ArrayOfUserDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDTO" nillable="true" type="tns:UserDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDTO" nillable="true" type="tns:ArrayOfUserDTO" />
+  <xs:complexType name="UserDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Data.Entities" minOccurs="0" name="Rating" nillable="true" type="q2:ArrayOfRating" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDTO" nillable="true" type="tns:UserDTO" />
+  <xs:complexType name="ArrayOfRatingDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RatingDTO" nillable="true" type="tns:RatingDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRatingDTO" nillable="true" type="tns:ArrayOfRatingDTO" />
+  <xs:complexType name="RatingDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Rate" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Review" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Data.Entities" minOccurs="0" name="Song" nillable="true" type="q3:Song" />
+      <xs:element minOccurs="0" name="SongID" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Data.Entities" minOccurs="0" name="Songs" nillable="true" type="q4:ArrayOfSong" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Data.Entities" minOccurs="0" name="User" nillable="true" type="q5:User" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RatingDTO" nillable="true" type="tns:RatingDTO" />
+</xs:schema>

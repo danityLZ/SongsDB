@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Data.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Data.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfRating">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rating" nillable="true" type="tns:Rating" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRating" nillable="true" type="tns:ArrayOfRating" />
+  <xs:complexType name="Rating">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Rate" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Review" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Song" nillable="true" type="tns:Song" />
+          <xs:element minOccurs="0" name="SongID" type="xs:int" />
+          <xs:element minOccurs="0" name="Songs" nillable="true" type="tns:ArrayOfSong" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Rating" nillable="true" type="tns:Rating" />
+  <xs:complexType name="BaseEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseEntity" nillable="true" type="tns:BaseEntity" />
+  <xs:complexType name="Song">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Lenght" type="xs:float" />
+          <xs:element minOccurs="0" name="Rating" nillable="true" type="tns:ArrayOfRating" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="YearReleased" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Song" nillable="true" type="tns:Song" />
+  <xs:complexType name="ArrayOfSong">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Song" nillable="true" type="tns:Song" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSong" nillable="true" type="tns:ArrayOfSong" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Age" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rating" nillable="true" type="tns:ArrayOfRating" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+</xs:schema>
